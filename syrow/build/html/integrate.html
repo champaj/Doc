@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Android (React) &mdash; SYROW 0.0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="iOS (Swift)" href="Ios(Swift).html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/SyrowLogo1.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">More:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="javascriptapi.html">javaScript APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Android(java).html">Android (Java)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ios(objective C).html">iOS (Objective-C)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ios(Swift).html">iOS (Swift)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Android (React)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SYROW</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Android (React)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="android-react">
+<h1>Android (React)<a class="headerlink" href="#android-react" title="Permalink to this headline">¶</a></h1>
+<p>To integrate your android app with project follow the below guidelines.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open android studio &gt; File &gt; New project (android) &gt;</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/crtandroidproject.png" src="_images/crtandroidproject.png" />
+</div>
+<p>In the above tab you have to fill:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Application name in <strong>Application name</strong> textfield, for e.g here is <cite>TestChatApp</cite> .</li>
+<li>Here <strong>Company domain</strong> for e.g. <cite>syrow.com</cite></li>
+<li>Here set the <strong>Project location</strong> means the location of project in your system then</li>
+<li>Click on <strong>Next</strong> button then</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/targetandroiddevice.png" src="_images/targetandroiddevice.png" />
+</div>
+<p>Here you set the <strong>Targeted Android Device</strong> (for which you are  developing this).</p>
+<blockquote>
+<div><ul class="simple">
+<li>Here set the <em>Device</em> and their <em>API</em> version.</li>
+<li>Click on <strong>Next</strong> button to proceed.</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/targetandroiddevice.png" src="_images/targetandroiddevice.png" />
+</div>
+<p>Above tab will be open here</p>
+<blockquote>
+<div><ul class="simple">
+<li>Add an <strong>Activity</strong> to Mobile .</li>
+<li>Click on <strong>Next</strong></li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/addactivity.png" src="_images/addactivity.png" />
+</div>
+<p>Here</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click on <strong>Empty Activity</strong> to select that activity for your project.</li>
+<li>Then click on <strong>Next</strong> button.</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/configureactivity.png" src="_images/configureactivity.png" />
+</div>
+<p>In the above tab enable these two checkboxs <strong>Generate Layout File</strong> and <strong>Backwards Compatibility (AppCompact)</strong> and set</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Activity name</strong> to <em>MainActivity</em> and</li>
+<li><strong>Layout Name</strong> to <em>activity_main</em> then</li>
+<li>Click on <strong>Finish</strong> button to finish the configuration process.</li>
+</ul>
+</div></blockquote>
+<p>Then you will see below tab</p>
+<div class="figure align-center">
+<img alt="_images/mainactivityjava.png" src="_images/mainactivityjava.png" />
+</div>
+<p>Here now you have to import module from library.</p>
+<div class="figure align-center">
+<img alt="_images/newmodule.png" src="_images/newmodule.png" />
+</div>
+<p>Then click on <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>New Module…</strong> as in above tab.</p>
+<div class="figure align-center">
+<img alt="_images/newmodule1.png" src="_images/newmodule1.png" />
+</div>
+<div class="figure align-center">
+<img alt="_images/importmodulefromlibrary1.png" src="_images/importmodulefromlibrary1.png" />
+</div>
+<p>Here browse file from your system means</p>
+<blockquote>
+<div><ul class="simple">
+<li>Set the <strong>File name:</strong> as in above tab.</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/importmodulefromlibrary.png" src="_images/importmodulefromlibrary.png" />
+</div>
+<p>Here</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select <strong>app-debug.aar</strong> for <em>File name:</em></li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/subprojectname.png" src="_images/subprojectname.png" />
+</div>
+<p>As you can see above</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>Click on <strong>Subproject name</strong> textfield and rename it form <em>TestChatApp</em> to <em>app-syrow</em> .</li>
+<li>Then click on <strong>Finish</strong> button.</li>
+</ul>
+</div></blockquote>
+<p># Now copy the below code into your main activity</p>
+</div></blockquote>
+<p>Here is Java code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>public class MainActivity extends AppCompatActivity {
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_main);
+
+       Button btnSend = findViewById(R.id.btn_send);
+
+       btnSend.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+               Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+
+               intent.putExtra(&quot;APIKey&quot;, “&lt;— REQUEST CLIENT RELATIONSHIP LEAD —&gt;”);
+               intent.putExtra(&quot;customerName&quot;, &quot;Raj Singh&quot;);
+               intent.putExtra(&quot;customerEmail&quot;, &quot;raj@syrow.com&quot;);
+               intent.putExtra(&quot;phoneNumber&quot;, &quot;9876543210&quot;);
+               intent.setComponent(new ComponentName(&quot;packagename//com.syrow.chat&quot;,
+                       &quot;classname//com.syrow.chat.ChatRoomActivity&quot;));
+               startActivity(intent);
+
+           }
+       });
+
+   }
+
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Now you can run the build process to test</li>
+<li>And <strong>customerName, customerEmail and phoneNumber</strong> are optional in above code.</li>
+</ul>
+</div>
+<p>After importing the Library in your project. You will find your library module name in <code class="docutils literal notranslate"><span class="pre">setting.gradle(Project</span> <span class="pre">Settings)</span></code>.</p>
+<div class="figure align-center">
+<img alt="_images/1.png" src="_images/1.png" />
+</div>
+<p>Add your library dependency to dependecies in <code class="docutils literal notranslate"><span class="pre">build.gradle(Module:app)</span></code> . i.e implementation project <strong>(“module name”)</strong> .
+Also add the dependencies that are <strong>added/used</strong> in the library <strong>project/module</strong> to your project.</p>
+<div class="figure align-center">
+<img alt="_images/2.png" src="_images/2.png" />
+</div>
+<p>In <strong>Color.xml</strong> add these <em>color attribute</em> to change the color of chatApp theme.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">&lt;</span><span class="n">color</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;chatColor&quot;</span><span class="o">&gt;</span><span class="c1">#000000&lt;/color&gt;</span>
+<span class="o">&lt;</span><span class="n">color</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;chatColorPrimaryDark&quot;</span><span class="o">&gt;</span><span class="c1">#000000&lt;/color&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="_images/3.png" src="_images/3.png" />
+</div>
+<p>And you are done. Here is your AAR file</p>
+<p><a class="reference download internal" download="" href="_downloads/e0b607315e849467af10f9fffddd54d2/app-debug.aar"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">AAr</span> <span class="pre">file</span></code></a>.</p>
+<p>Here is gradle-build-gradle Code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dependencies</span> <span class="p">{</span>
+        <span class="n">classpath</span> <span class="s1">&#39;com.android.tools.build:gradle:3.3.1&#39;</span>
+
+        <span class="o">//</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">place</span> <span class="n">your</span> <span class="n">application</span> <span class="n">dependencies</span> <span class="n">here</span><span class="p">;</span> <span class="n">they</span> <span class="n">belong</span>
+        <span class="o">//</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">individual</span> <span class="n">module</span> <span class="n">build</span><span class="o">.</span><span class="n">gradle</span> <span class="n">files</span>
+        <span class="n">classpath</span> <span class="s1">&#39;com.google.gms:google-services:1.5.0-beta2&#39;</span>
+    <span class="p">}</span>
+
+
+<span class="n">allprojects</span> <span class="p">{</span>
+    <span class="n">repositories</span> <span class="p">{</span>
+        <span class="n">google</span><span class="p">()</span>
+        <span class="n">jcenter</span><span class="p">()</span>
+        <span class="n">maven</span> <span class="p">{</span> <span class="n">url</span> <span class="s1">&#39;https://jitpack.io&#39;</span> <span class="p">}</span>
+        <span class="n">flatDir</span> <span class="p">{</span>
+            <span class="n">dirs</span> <span class="s1">&#39;libs&#39;</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is app-build-gradle Code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">compileOptions</span> <span class="p">{</span>
+        <span class="n">sourceCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="n">VERSION_1_8</span>
+        <span class="n">targetCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="n">VERSION_1_8</span>
+    <span class="p">}</span>
+
+
+
+  <span class="n">dependencies</span>
+<span class="p">{</span>
+
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.support:design:27.1.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.support.constraint:constraint-layout:1.1.2&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.support:support-v4:27.1.1&#39;</span>
+    <span class="n">testImplementation</span> <span class="s1">&#39;junit:junit:4.12&#39;</span>
+    <span class="n">androidTestImplementation</span> <span class="s1">&#39;com.android.support.test:runner:1.0.2&#39;</span>
+    <span class="n">androidTestImplementation</span> <span class="s1">&#39;com.android.support.test.espresso:espresso-core:3.0.2&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.loopj.android:android-async-http:1.4.9&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;de.hdodenhof:circleimageview:2.2.0&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;io.crossbar.autobahn:autobahn-android:18.5.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.jetbrains:annotations-java5:15.0&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.support:cardview-v7:27.1.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.volley:volley:1.1.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.github.bumptech.glide:glide:4.3.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.github.Cloudist:ImageViewer:1.1.5&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;me.relex:photodraweeview:1.1.3&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.facebook.fresco:fresco:0.14.1&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.4ert:audioview:0.4&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.squareup.picasso:picasso:2.71828&#39;</span>
+<span class="p">}</span>
+
+
+<span class="n">android</span> <span class="p">{</span>
+    <span class="n">defaultConfig</span> <span class="p">{</span>
+        <span class="n">multiDexEnabled</span> <span class="n">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here is java Code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="n">Button</span><span class="p">)</span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">btn_send</span><span class="p">)</span> <span class="p">;</span>
+      <span class="n">b</span><span class="o">.</span><span class="n">setOnClickListener</span><span class="p">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="p">{</span>
+
+          <span class="n">Intent</span> <span class="n">intent</span><span class="o">=</span><span class="n">new</span> <span class="n">Intent</span><span class="p">(</span><span class="n">MainAct</span><span class="o">.</span><span class="n">this</span><span class="p">,</span><span class="n">ChatRoomActivity</span><span class="o">.</span><span class="n">class</span><span class="p">);</span>
+
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;APIKey&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;— REQUEST CLIENT RELATIONSHIP LEAD —&gt;&quot;</span><span class="p">);</span>
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;customerName&quot;</span><span class="p">,</span> <span class="s2">&quot;Raj Singh&quot;</span><span class="p">);</span>
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;companyId&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">);</span>
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;customerId&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">);</span>
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;customerEmail&quot;</span><span class="p">,</span> <span class="s2">&quot;raj@syrow.com&quot;</span><span class="p">);</span>
+          <span class="n">intent</span><span class="o">.</span><span class="n">putExtra</span><span class="p">(</span><span class="s2">&quot;phoneNumber&quot;</span><span class="p">,</span> <span class="s2">&quot;9876543210&quot;</span><span class="p">);</span>
+          <span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">);</span>
+
+
+      <span class="p">});</span>
+</pre></div>
+</div>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/h3udGVw8eBw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Ios(Swift).html" class="btn btn-neutral float-left" title="iOS (Swift)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

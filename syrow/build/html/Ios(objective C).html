@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>iOS (Objective-C) &mdash; SYROW 0.0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="iOS (Swift)" href="Ios(Swift).html" />
+    <link rel="prev" title="Android (Java)" href="Android(java).html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/SyrowLogo1.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">More:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="javascriptapi.html">javaScript APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Android(java).html">Android (Java)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">iOS (Objective-C)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-concepts">Key Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-directory-structure">1. Set up directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-javascript-dependencies">2. Install JavaScript dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-cocoapods">3. Install CocoaPods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-react-native-to-your-app">Adding React Native to your app</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-tools-for-xcode">Command Line Tools for Xcode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-cocoapods-dependencies">Configuring CocoaPods dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-integration">Code integration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-react-native-component">The React Native component</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-your-integration">Test your integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#now-what">Now what?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Ios(Swift).html">iOS (Swift)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrate.html">Android (React)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SYROW</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>iOS (Objective-C)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ios-objective-c">
+<h1>iOS (Objective-C)<a class="headerlink" href="#ios-objective-c" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="key-concepts">
+<h2>Key Concepts<a class="headerlink" href="#key-concepts" title="Permalink to this headline">¶</a></h2>
+<p>The keys to integrating React Native components into your iOS application are to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Set up React Native dependencies and directory structure.</li>
+<li>Understand what React Native components you will use in your app.</li>
+<li>Add these components as dependencies using CocoaPods.</li>
+<li>Develop your React Native components in JavaScript.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code> to your iOS app. This view will serve as the container for your React Native component.</li>
+<li>Start the React Native server and run your native application.</li>
+<li>Verify that the React Native aspect of your application works as expected.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Follow the instructions for building apps with native code from the <a class="reference external" href="https://facebook.github.io/react-native/docs/getting-started">Getting Started guide</a> to configure your development environment for building React Native apps for iOS.</p>
+<div class="section" id="set-up-directory-structure">
+<h3>1. Set up directory structure<a class="headerlink" href="#set-up-directory-structure" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>To ensure a smooth experience, create a new folder for your integrated React Native project, then copy your existing iOS project to a <code class="docutils literal notranslate"><span class="pre">/ios</span></code> subfolder.</div></blockquote>
+</div>
+<div class="section" id="install-javascript-dependencies">
+<h3>2. Install JavaScript dependencies<a class="headerlink" href="#install-javascript-dependencies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Go to the root directory for your project and create a new <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file with the following contents:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MyReactNativeApp&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;private&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s2">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;yarn react-native start&quot;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Next, make sure you have <a class="reference external" href="https://yarnpkg.com/lang/en/docs/install/#debian-stable">installed the yarn package manager</a>.</p>
+<p>Install the <code class="docutils literal notranslate"><span class="pre">react</span></code> and <code class="docutils literal notranslate"><span class="pre">react-native</span></code> packages. Open a terminal or command prompt, then navigate to the directory with your <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ yarn add react-native
+</pre></div>
+</div>
+<p>This will print a message similar to the following (scroll up in the yarn output to see it):</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">“<a class="reference external" href="mailto:react-native&#37;&#52;&#48;0&#46;52&#46;2">react-native<span>&#64;</span>0<span>&#46;</span>52<span>&#46;</span>2</a>” has unmet peer dependency “<a class="reference external" href="mailto:react&#37;&#52;&#48;16&#46;2&#46;0">react<span>&#64;</span>16<span>&#46;</span>2<span>&#46;</span>0</a>”.</p>
+</div>
+<p>This is OK, it means we also need to install React:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ yarn add react@version_printed_above
+</pre></div>
+</div>
+<p>Yarn has created a new <code class="docutils literal notranslate"><span class="pre">/node_modules</span></code> folder. This folder stores all the JavaScript dependencies required to build your project.</p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">node_modules/</span></code> to your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
+</div>
+<div class="section" id="install-cocoapods">
+<h3>3. Install CocoaPods<a class="headerlink" href="#install-cocoapods" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><a class="reference external" href="https://cocoapods.org/">CocoaPods</a> is a package management tool for iOS and macOS development. We use it to add the actual React Native framework code locally into your current project.</div></blockquote>
+<p>We recommend installing CocoaPods using <a class="reference external" href="https://brew.sh/">Homebrew</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install cocoapods
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is technically possible not to use CocoaPods, but that would require manual library and linker additions that would overly complicate this process.</p>
+</div>
+</div>
+</div>
+<div class="section" id="adding-react-native-to-your-app">
+<h2>Adding React Native to your app<a class="headerlink" href="#adding-react-native-to-your-app" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Assume the <a class="reference external" href="https://github.com/JoelMarcey/iOS-2048">app for integration</a> is a <a class="reference external" href="https://en.wikipedia.org/wiki/2048_%28video_game%29">2048</a> game. Here is what the main menu of the native application looks like without React Native.</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/react-native-existing-app-integration-ios-before.png" src="_images/react-native-existing-app-integration-ios-before.png" />
+</div>
+<div class="section" id="command-line-tools-for-xcode">
+<h3>Command Line Tools for Xcode<a class="headerlink" href="#command-line-tools-for-xcode" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Install the Command Line Tools. Choose “Preferences…” in the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.</div></blockquote>
+<div class="figure align-center">
+<img alt="_images/GettingStartedXcodeCommandLineTools.png" src="_images/GettingStartedXcodeCommandLineTools.png" />
+</div>
+</div>
+<div class="section" id="configuring-cocoapods-dependencies">
+<h3>Configuring CocoaPods dependencies<a class="headerlink" href="#configuring-cocoapods-dependencies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Before you integrate React Native into your application, you will want to decide what parts of the React Native framework you would like to integrate. We will use CocoaPods to specify which of these     “subspecs” your app will depend on.</p>
+<p>The list of supported <code class="docutils literal notranslate"><span class="pre">subspecs</span></code> is available in <code class="docutils literal notranslate"><span class="pre">/node_modules/react-native/React.podspec</span></code> . They are generally named by functionality. For example, you will generally always want the <code class="docutils literal notranslate"><span class="pre">Core</span> <span class="pre">subspec</span></code> . That will get you the <code class="docutils literal notranslate"><span class="pre">AppRegistry,</span> <span class="pre">StyleSheet,</span> <span class="pre">View</span></code> and other core React Native libraries. If you want to add the React Native <code class="docutils literal notranslate"><span class="pre">Text</span></code> library (e.g., for <code class="docutils literal notranslate"><span class="pre">&lt;Text&gt;</span></code> elements), then you will need the <code class="docutils literal notranslate"><span class="pre">RCTText</span> <span class="pre">subspec</span></code>. If you want the <code class="docutils literal notranslate"><span class="pre">Image</span></code> library (e.g., for <code class="docutils literal notranslate"><span class="pre">&lt;Image&gt;</span></code> elements), then you will need the <code class="docutils literal notranslate"><span class="pre">RCTImage</span> <span class="pre">subspec</span></code>.</p>
+</div></blockquote>
+<p>You can specify which <code class="docutils literal notranslate"><span class="pre">subspecs</span></code> your app will depend on in a <code class="docutils literal notranslate"><span class="pre">Podfile</span></code> file. The easiest way to create a <code class="docutils literal notranslate"><span class="pre">Podfile</span></code> is by running the CocoaPods <code class="docutils literal notranslate"><span class="pre">init</span></code> command in the <code class="docutils literal notranslate"><span class="pre">/ios</span></code> subfolder of your project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pod init
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Podfile</span></code> will contain a boilerplate setup that you will tweak for your integration purposes. In the end, <code class="docutils literal notranslate"><span class="pre">Podfile</span></code> should look something similar to this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The target name is most likely the name of your project.</span>
+<span class="n">target</span> <span class="s1">&#39;NumberTileGame&#39;</span> <span class="n">do</span>
+
+ <span class="c1"># Your &#39;node_modules&#39; directory is probably in the root of your project,</span>
+ <span class="c1"># but if not, adjust the `:path` accordingly</span>
+ <span class="n">pod</span> <span class="s1">&#39;React&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="s1">&#39;../node_modules/react-native&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">subspecs</span> <span class="o">=&gt;</span> <span class="p">[</span>
+   <span class="s1">&#39;Core&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;CxxBridge&#39;</span><span class="p">,</span> <span class="c1"># Include this for RN &gt;= 0.47</span>
+   <span class="s1">&#39;DevSupport&#39;</span><span class="p">,</span> <span class="c1"># Include this to enable In-App Devmenu if RN &gt;= 0.43</span>
+   <span class="s1">&#39;RCTText&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;RCTNetwork&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;RCTWebSocket&#39;</span><span class="p">,</span> <span class="c1"># Needed for debugging</span>
+   <span class="s1">&#39;RCTAnimation&#39;</span><span class="p">,</span> <span class="c1"># Needed for FlatList and animations running on native UI thread</span>
+   <span class="c1"># Add any other subspecs you want to use in your project</span>
+ <span class="p">]</span>
+ <span class="c1"># Explicitly include Yoga if you are using RN &gt;= 0.42.0</span>
+ <span class="n">pod</span> <span class="s1">&#39;yoga&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">path</span> <span class="o">=&gt;</span> <span class="s1">&#39;../node_modules/react-native/ReactCommon/yoga&#39;</span>
+
+ <span class="c1"># Third party deps podspec link</span>
+ <span class="n">pod</span> <span class="s1">&#39;DoubleConversion&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec&#39;</span>
+ <span class="n">pod</span> <span class="s1">&#39;glog&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;../node_modules/react-native/third-party-podspecs/glog.podspec&#39;</span>
+ <span class="n">pod</span> <span class="s1">&#39;Folly&#39;</span><span class="p">,</span> <span class="p">:</span><span class="n">podspec</span> <span class="o">=&gt;</span> <span class="s1">&#39;../node_modules/react-native/third-party-podspecs/Folly.podspec&#39;</span>
+
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>After you have created your <code class="docutils literal notranslate"><span class="pre">Podfile</span></code>, you are ready to install the React Native pod.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pod install
+</pre></div>
+</div>
+<p>You should see output such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Analyzing dependencies
+Fetching podspec for `React` from `../node_modules/react-native`
+Downloading dependencies
+Installing React (0.26.0)
+Generating Pods project
+Integrating client project
+Sending stats
+Pod installation complete! There are 3 dependencies from the Podfile and 1 total pod installed.
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If this fails with errors mentioning <code class="docutils literal notranslate"><span class="pre">xcrun</span></code>, make sure that in Xcode in Preferences &gt; Locations the Command Line Tools are assigned.</p>
+</div>
+</div>
+<div class="section" id="code-integration">
+<h3>Code integration<a class="headerlink" href="#code-integration" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Now we will actually modify the native iOS application to integrate React Native. For our 2048 sample app, we will add a “High Score” screen in React Native.</div></blockquote>
+<div class="section" id="the-react-native-component">
+<span id="id2"></span><h4>The React Native component<a class="headerlink" href="#the-react-native-component" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>The first bit of code we will write is the actual React Native code for the new “High Score” screen that will be integrated into our application.</p>
+<ol class="arabic simple">
+<li><strong>Create a index.js file</strong></li>
+</ol>
+</div></blockquote>
+<p>First, create an empty <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file in the root of your React Native project.</p>
+<p><code class="docutils literal notranslate"><span class="pre">index.js</span></code> is the starting point for React Native applications, and it is always required. It can be a small file that <code class="docutils literal notranslate"><span class="pre">requires</span></code> other file that are part of your React Native component or application, or it      can   contain all the code that is needed for it. In our case, we will just put everything in <code class="docutils literal notranslate"><span class="pre">index.js</span></code>.</p>
+<blockquote>
+<div><ol class="arabic simple" start="2">
+<li><strong>Add your React Native code</strong></li>
+</ol>
+</div></blockquote>
+<p>In your <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, create your component. In our sample here, we will add simple <code class="docutils literal notranslate"><span class="pre">&lt;Text&gt;</span></code> component within a styled <code class="docutils literal notranslate"><span class="pre">&lt;View&gt;</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> import React from &#39;react&#39;;
+ import {AppRegistry, StyleSheet, Text, View} from &#39;react-native&#39;;
+
+class RNHighScores extends React.Component {
+ render() {
+   var contents = this.props[&#39;scores&#39;].map((score) =&gt; (
+     &lt;Text key={score.name}&gt;
+       {score.name}:{score.value}
+       {&#39;\n&#39;}
+     &lt;/Text&gt;
+   ));
+   return (
+     &lt;View style={styles.container}&gt;
+       &lt;Text style={styles.highScoresTitle}&gt;2048 High Scores!&lt;/Text&gt;
+       &lt;Text style={styles.scores}&gt;{contents}&lt;/Text&gt;
+     &lt;/View&gt;
+   );
+ }
+}
+
+const styles = StyleSheet.create({
+ container: {
+   flex: 1,
+   justifyContent: &#39;center&#39;,
+   alignItems: &#39;center&#39;,
+   backgroundColor: &#39;#FFFFFF&#39;,
+ },
+ highScoresTitle: {
+   fontSize: 20,
+   textAlign: &#39;center&#39;,
+   margin: 10,
+ },
+ scores: {
+   textAlign: &#39;center&#39;,
+   color: &#39;#333333&#39;,
+   marginBottom: 5,
+ },
+});
+
+// Module name
+AppRegistry.registerComponent(&#39;RNHighScores&#39;, () =&gt; RNHighScores);
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">RNHighScores</span></code> is the name of your module that will be used when you add a view to React Native from within your iOS application.</p>
+</div>
+<p><strong>The Magic: RCTRootView</strong></p>
+<p>Now that your React Native component is created via <code class="docutils literal notranslate"><span class="pre">index.js</span></code>, you need to add that component to a new or existing <code class="docutils literal notranslate"><span class="pre">ViewController</span></code>. The easiest path to take is to optionally create an event path to your component and then add that component to an existing <code class="docutils literal notranslate"><span class="pre">ViewController</span></code>.</p>
+<p>We will tie our React Native component with a new native view in the <code class="docutils literal notranslate"><span class="pre">ViewController</span></code> that will actually host it called <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code> .</p>
+<ol class="arabic simple">
+<li><strong>Create an Event Path</strong></li>
+</ol>
+<p>You can add a new link on the main game menu to go to the “High Score” React Native page.</p>
+<div class="figure align-center">
+<img alt="_images/reactnativeaddreactnativeintegrationlink.png" src="_images/reactnativeaddreactnativeintegrationlink.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>Event Handler</strong></li>
+</ol>
+<p>We will now add an event handler from the menu link. A method will be added to the main <code class="docutils literal notranslate"><span class="pre">ViewController</span></code> of your application. This is where <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code> comes into play.</p>
+<p>When you build a React Native application, you use the React Native packager to create an <code class="docutils literal notranslate"><span class="pre">index.bundle</span></code> that will be served by the React Native server. Inside <code class="docutils literal notranslate"><span class="pre">index.bundle</span></code> will be our <code class="docutils literal notranslate"><span class="pre">RNHighScore</span></code> module. So, we need to point our <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code> to the location of the <code class="docutils literal notranslate"><span class="pre">index.bundle</span></code> resource (via <code class="docutils literal notranslate"><span class="pre">NSURL</span></code>) and tie it to the module.</p>
+<p>We will, for debugging purposes, log that the event handler was invoked. Then, we will create a string with the location of our React Native code that exists inside the <code class="docutils literal notranslate"><span class="pre">index.bundle</span></code>. Finally, we will create the main <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code>. Notice how we provide <code class="docutils literal notranslate"><span class="pre">RNHighScores</span></code> as the <code class="docutils literal notranslate"><span class="pre">moduleName</span></code> that we created above when writing the code for <a class="reference internal" href="#id2"><span class="std std-ref">The React Native component</span></a>.</p>
+<p>First <code class="docutils literal notranslate"><span class="pre">import</span></code> the <code class="docutils literal notranslate"><span class="pre">RCTRootView</span></code> header.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#import &lt;React/RCTRootView.h&gt;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">initialProperties</span></code> are here for illustration purposes so we have some data for our high score screen. In our React Native component, we will use <code class="docutils literal notranslate"><span class="pre">this.props</span></code> to get access to that data.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="n">highScoreButtonPressed</span><span class="p">:(</span><span class="nb">id</span><span class="p">)</span><span class="n">sender</span> <span class="p">{</span>
+   <span class="n">NSLog</span><span class="p">(</span><span class="o">@</span><span class="s2">&quot;High Score Button Pressed&quot;</span><span class="p">);</span>
+   <span class="n">NSURL</span> <span class="o">*</span><span class="n">jsCodeLocation</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURL</span> <span class="n">URLWithString</span><span class="p">:</span><span class="o">@</span><span class="s2">&quot;http://localhost:8081/index.bundle?platform=ios&quot;</span><span class="p">];</span>
+
+   <span class="n">RCTRootView</span> <span class="o">*</span><span class="n">rootView</span> <span class="o">=</span>
+     <span class="p">[[</span><span class="n">RCTRootView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithBundleURL</span><span class="p">:</span> <span class="n">jsCodeLocation</span>
+                                 <span class="n">moduleName</span><span class="p">:</span> <span class="o">@</span><span class="s2">&quot;RNHighScores&quot;</span>
+                          <span class="n">initialProperties</span><span class="p">:</span>
+                            <span class="o">@</span><span class="p">{</span>
+                              <span class="o">@</span><span class="s2">&quot;scores&quot;</span> <span class="p">:</span> <span class="o">@</span><span class="p">[</span>
+                                <span class="o">@</span><span class="p">{</span>
+                                  <span class="o">@</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="o">@</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
+                                  <span class="o">@</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="o">@</span><span class="s2">&quot;42&quot;</span>
+                                 <span class="p">},</span>
+                                <span class="o">@</span><span class="p">{</span>
+                                  <span class="o">@</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="o">@</span><span class="s2">&quot;Joel&quot;</span><span class="p">,</span>
+                                  <span class="o">@</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="o">@</span><span class="s2">&quot;10&quot;</span>
+                                <span class="p">}</span>
+                              <span class="p">]</span>
+                            <span class="p">}</span>
+                              <span class="n">launchOptions</span><span class="p">:</span> <span class="n">nil</span><span class="p">];</span>
+   <span class="n">UIViewController</span> <span class="o">*</span><span class="n">vc</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+   <span class="n">vc</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">rootView</span><span class="p">;</span>
+   <span class="p">[</span><span class="bp">self</span> <span class="n">presentViewController</span><span class="p">:</span><span class="n">vc</span> <span class="n">animated</span><span class="p">:</span><span class="n">YES</span> <span class="n">completion</span><span class="p">:</span><span class="n">nil</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that <code class="docutils literal notranslate"><span class="pre">RCTRootView</span> <span class="pre">initWithURL</span></code> starts up a new JSC VM. To save resources and simplify the communication between RN views in different parts of your native app, you can have multiple views powered by React Native that are associated with a single JS runtime. To do that, instead of using <code class="docutils literal notranslate"><span class="pre">[RCTRootView</span> <span class="pre">alloc]</span> <span class="pre">initWithURL</span></code>, use <code class="docutils literal notranslate"><span class="pre">RCTBridge</span> <span class="pre">initWithBundleURL</span></code> to create a bridge and then use <code class="docutils literal notranslate"><span class="pre">RCTRootView</span> <span class="pre">initWithBridge</span></code>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When moving your app to production, the <code class="docutils literal notranslate"><span class="pre">NSURL</span></code> can point to a pre-bundled file on disk via something like <code class="docutils literal notranslate"><span class="pre">[[NSBundle</span> <span class="pre">mainBundle]</span> <span class="pre">URLForResource:&#64;&quot;main&quot;</span> <span class="pre">withExtension:&#64;&quot;jsbundle&quot;];</span></code>. You can use the <code class="docutils literal notranslate"><span class="pre">react-native-xcode.sh</span></code> script in <code class="docutils literal notranslate"><span class="pre">node_modules/react-native/scripts/</span></code> to generate that pre-bundled file.</p>
+</div>
+<p><strong>3. Wire Up</strong></p>
+<p>Wire up the new link in the main menu to the newly added event handler method.</p>
+<div class="figure align-center">
+<img alt="_images/reactnativeaddreactnativeintegrationwireup.png" src="_images/reactnativeaddreactnativeintegrationwireup.png" />
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">One of the easier ways to do this is to open the view in the storyboard and right click on the new link. Select something such as the <code class="docutils literal notranslate"><span class="pre">Touch</span> <span class="pre">Up</span> <span class="pre">Inside</span></code> event, drag that to the storyboard and then select the created method from the list provided.</p>
+</div>
+</div>
+<div class="section" id="test-your-integration">
+<h4>Test your integration<a class="headerlink" href="#test-your-integration" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>You have now done all the basic steps to integrate React Native with your current application. Now we will start the React Native packager to build the <code class="docutils literal notranslate"><span class="pre">index.bundle</span></code> package and the server running on <code class="docutils literal notranslate"><span class="pre">localhost</span></code> to serve it.</div></blockquote>
+<ol class="arabic simple">
+<li><strong>Add App Transport Security exception</strong></li>
+</ol>
+<p>Apple has blocked implicit cleartext HTTP resource loading. So we need to add the following our project’s Info.plist (or equivalent) file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">NSAppTransportSecurity</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nb">dict</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">NSExceptionDomains</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">dict</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">localhost</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nb">dict</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">key</span><span class="o">&gt;</span><span class="n">NSTemporaryExceptionAllowsInsecureHTTPLoads</span><span class="o">&lt;/</span><span class="n">key</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">true</span><span class="o">/&gt;</span>
+        <span class="o">&lt;/</span><span class="nb">dict</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nb">dict</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nb">dict</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">App Transport Security is good for your users. Make sure to re-enable it prior to releasing your app for production.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>Run the packager</strong></li>
+</ol>
+<p>To run your app, you need to first start the development server. To do this, simply run the following command in the root directory of your React Native project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ npm start
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><strong>Run the app</strong></li>
+</ol>
+<p>If you are using Xcode or your favorite editor, build and run your native iOS application as normal. Alternatively, you can run the app from the command line using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># From the root of your project
+$ react-native run-ios
+</pre></div>
+</div>
+<p>In our sample application, you should see the link to the “High Scores” and then when you click on that you will see the rendering of your React Native component.</p>
+<p>Here is the native application home screen:</p>
+<div class="figure align-center">
+<img alt="_images/reactnativeaddreactnativeintegrationexamplehomescreen.png" src="_images/reactnativeaddreactnativeintegrationexamplehomescreen.png" />
+</div>
+<p>Here is the React Native high score screen:</p>
+<div class="figure align-center">
+<img alt="_images/reactnativeaddreactnativeintegrationexamplehighscores.png" src="_images/reactnativeaddreactnativeintegrationexamplehighscores.png" />
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you are getting module resolution issues when running your application please see <a class="reference external" href="https://github.com/facebook/react-native/issues/4968">this GitHub issue</a> for information and possible resolution. <a class="reference external" href="https://github.com/facebook/react-native/issues/4968#issuecomment-220941717">This comment</a> seemed to be the latest possible resolution.</p>
+</div>
+</div>
+<div class="section" id="now-what">
+<h4>Now what?<a class="headerlink" href="#now-what" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div>At this point you can continue developing your app as usual. Refer to our <a class="reference external" href="https://facebook.github.io/react-native/docs/debugging">debugging</a> and <a class="reference external" href="https://facebook.github.io/react-native/docs/running-on-device">deployment</a> docs to learn more about working with React Native.</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Ios(Swift).html" class="btn btn-neutral float-right" title="iOS (Swift)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Android(java).html" class="btn btn-neutral float-left" title="Android (Java)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
